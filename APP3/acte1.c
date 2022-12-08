@@ -6,7 +6,6 @@
 #include "arbresphylo.h"
 #include "common_tests.h"
 
-// test 
 
 int main(int argc, char** argv) {
 	if (argc != 2) {

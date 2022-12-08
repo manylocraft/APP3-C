@@ -36,8 +36,30 @@ void analyse_arbre (arbre racine, int* nb_esp, int* nb_carac)
  */
 int rechercher_espece (arbre racine, char *espece, liste_t* seq)
 {
-    /* à compléter */
-    return 1;
+
+   /* à compléter */
+   if (racine == NULL){
+      return 1;
+   }
+
+   else if (racine->valeur == espece){
+      return 0;
+   }
+
+   else {
+      if ( rechercher_espece((racine->gauche), espece, seq) == 0 ){
+         return 0;
+      }
+      else if ( rechercher_espece((racine->droit), espece, seq) == 0 ){
+         ajouter_tete(seq, racine->valeur);
+         return 0;
+      }
+      else{
+         return 1;
+      }
+   }
+   
+   return 1;
 }
 
 
