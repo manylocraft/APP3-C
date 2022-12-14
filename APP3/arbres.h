@@ -28,7 +28,12 @@ noeud* nouveau_noeud (void);
  */
 arbre lire_arbre (FILE *f);
 
-/* Fonction d'affichage, à remplir */
+/* ACTE 1-b */
+
+// ajout perso de fct recursive
+void rec_affiche(noeud *a, FILE *f);
+
+/* Fonction d'affichage, à remplir: FAIT */
 void affiche_arbre (arbre);
 
 
