@@ -15,19 +15,34 @@ void init_liste_vide(liste_t* L) {
 void liberer_liste(liste_t* L) {
    // printf ("<<<<< À faire: fonction liberer_liste fichier " __FILE__ "\n >>>>>");
     /* a completer */
-   free(L);
+   if (L == NULL){
+      return;
+   }
+
+   cellule_t *tmp;
+   while (L->tete != NULL){
+      tmp = L->tete;
+      L->tete = L->tete->suivant;
+      free(tmp);
+   }
 }
 
 int ajouter_tete(liste_t* L, string c) { /* retourne 0 si OK, 1 sinon  */
    // printf ("<<<<< À faire: fonction ajouter_tete fichier " __FILE__ " >>>>>\n");
-    /* a completer: FAIT */
+    /* a comple  ter: FAIT */
 
-   cellule_t * newCel = (cellule_t *) malloc(sizeof(cellule_t)) ;
-   newCel->val = c;
-   newCel->suivant = L->tete;
-   L->tete = newCel;
-   //free(newCel);
+   if (L == NULL){
+      return 1;
+   }
+   else {
+      
+      cellule_t * newCel = (cellule_t *) malloc(sizeof(cellule_t)) ;
+      newCel->val = c;
+      newCel->suivant = L->tete;
+      L->tete = newCel;
 
-   return 1;
+      return 0;
+   }
+
 }
 
